@@ -17,6 +17,5 @@ urlpatterns = [
         name="article_detail",
     ),
     path("contact/", ContactView.as_view(), name="contact"),
-    path('contact/success/', ContactSuccessView.as_view(), name='contact_success'),
-
+    path("contact/success/", ContactSuccessView.as_view(), name="contact_success"),
 ]

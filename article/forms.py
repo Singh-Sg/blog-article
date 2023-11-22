@@ -1,7 +1,9 @@
+from article.models import ContactRequest
+
 from django import forms
 
 
-class ContactForm(forms.Form):
-    email = forms.EmailField()
-    name = forms.CharField(max_length=255)
-    content = forms.CharField(widget=forms.Textarea)
+class ContactForm(forms.ModelForm):
+    class Meta:
+        model = ContactRequest
+        fields = "__all__"
