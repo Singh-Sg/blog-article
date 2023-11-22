@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>{{ article.title }}</h1>
+  <p>{{ article.content }}</p>
+  <p>Author: {{ article.author.get_full_name }}</p>
+  <p>Publication Date: {{ article.publication_datetime }}</p>
+  <p><a href="{{ article_list_url }}">Back to Article List</a></p>
+{% endblock %}
