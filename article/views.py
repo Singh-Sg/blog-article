@@ -10,14 +10,15 @@ from django.core.mail import EmailMessage
 
 class ArticleListView(ListView):
     model = BlogArticle
-    template_name = 'article_list.html'
+    template_name = 'articles/list.html'
     context_object_name = 'articles'
     paginate_by = 2
+    ordering = ['-pk'] 
 
 
 class ArticleDetailView(DetailView):
     model = BlogArticle
-    template_name = 'article_detail.html'
+    template_name = 'articles/detail.html'
     context_object_name = 'article'
 
     def get_context_data(self, **kwargs):
@@ -27,7 +28,7 @@ class ArticleDetailView(DetailView):
 
 
 class ContactView(FormView):
-    template_name = 'contact_form.html'
+    template_name = 'contact/form.html'
     form_class = ContactForm
     success_url = reverse_lazy('contact_success')
 
@@ -58,7 +59,7 @@ class ContactView(FormView):
 
 class ContactSuccessView(ListView):
     model = ContactRequest
-    template_name = 'contact_success.html'
+    template_name = 'contact/success.html'
     context_object_name = 'contact_requests'
     paginate_by = 5
     ordering = ['-date'] 
