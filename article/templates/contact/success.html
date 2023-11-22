@@ -1,29 +1,9 @@
 {% extends 'base.html' %}
+{% block header %}
+<a href="{% url 'home' %}">Home</a>
 
+{% endblock %}
 {% block content %}
-  <h1>Contact Requests</h1>
-  {% for contact_request in contact_requests %}
-    <p>Name: {{ contact_request.name }}</p>
-    <p>Email: {{ contact_request.email }}</p>
-    <p>Content: {{ contact_request.content }}</p>
-    <hr>
-  {% endfor %}
+  <h1>{{ message }}</h1>
 
-  <div class="pagination">
-    <span class="step-links">
-        {% if contact_requests.has_previous %}
-            <a href="?page=1">&laquo; first</a>
-            <a href="?page={{ contact_requests.previous_page_number }}">previous</a>
-        {% endif %}
-
-        <span class="current">
-            Page {{ contact_requests.number }} of {{ contact_requests.paginator.num_pages }}.
-        </span>
-
-        {% if contact_requests.has_next %}
-            <a href="?page={{ contact_requests.next_page_number }}">next</a>
-            <a href="?page={{ contact_requests.paginator.num_pages }}">last &raquo;</a>
-        {% endif %}
-    </span>
-  </div>
 {% endblock %}

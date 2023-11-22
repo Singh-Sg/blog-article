@@ -1,3 +1,23 @@
-{% block content %}
+<!-- base.html -->
 
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Site{% endblock %}</title>
+    <!-- Add your other head content here -->
+</head>
+<body>
+    {% block header %}
+    <nav>
+        <span><a href="{% url 'contact' %}">Contact Form  </a></span>
+    </nav>
+    <nav>
+        <span><a href="{% url 'article_list' %}">Article List</a></span>
+    </nav>
+    {% endblock %}
+{% block content %}{% endblock %}
+
+</body>
+</html>
