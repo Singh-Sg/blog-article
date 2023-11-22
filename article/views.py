@@ -3,7 +3,7 @@ from django.urls import reverse_lazy
 from django.views import View
 from django.views.generic import CreateView, DetailView, ListView
 
-from .forms import ContactForm
+from .forms import ContactRequestForm
 from .models import BlogArticle
 
 
@@ -33,7 +33,7 @@ class ArticleDetailView(DetailView):
 
 class ContactView(CreateView):
     template_name = "contact/form.html"
-    form_class = ContactForm
+    form_class = ContactRequestForm
     success_url = reverse_lazy(
         "contact_success",
     )

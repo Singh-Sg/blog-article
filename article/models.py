@@ -33,4 +33,4 @@ class ContactRequest(models.Model):
         return f"Contact Request from {self.name} ({self.email})"
 
     class Meta:
-        verbose_name_plural = "ContactRequests"
+        verbose_name_plural = "Contact Requests"
