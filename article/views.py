@@ -19,7 +19,7 @@ class ArticleListView(ListView):
     model = BlogArticle
     template_name = "articles/list.html"
     context_object_name = "articles"
-    paginate_by = 2
+    paginate_by = 5
     ordering = ["-pk"]
 
 

@@ -11,7 +11,7 @@ class AdminPermissions:
         return False
 
 
-class BlogArticleAdmin(AdminPermissions, admin.ModelAdmin):
+class BlogArticleAdmin(admin.ModelAdmin):
     list_display = ("title", "author", "publication_datetime", "publish_online")
     prepopulated_fields = {"slug": ("title",)}
 
